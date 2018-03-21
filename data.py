@@ -16,6 +16,7 @@ import tkinter
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/eric/Desktop/smalldatabrains/website/python-speech-reco/key.json"
 stopwords=set(nltk.corpus.stopwords.words('french'))
+print(stopwords) #implement stopwords for sentiment analysis and words distribution
 files=os.listdir("data/")
 print(files)
 os.chdir("data/")
@@ -155,30 +156,6 @@ index2char=dict((i,w) for i,w in enumerate(unique))
 
 integer_encoded=[word2index[word] for word in words]
 
-printed=False
+printed=True
 if printed==True:
-	print(words) #words version of the data
 	print(integer_encoded) #integer version (each word correspond to 1 integer value) of the data
-
-onehot_encoded=list() #empty onehot list
-
-def one_hot(integer_encoded):
-	for value in integer_encoded:
-		val=[0 for _  in range(len(unique))]
-		val[value]=1
-		onehot_encoded.append(val)
-	return onehot_encoded
-
-save=False
-if save==True:
-	onehot=one_hot(integer_encoded)
-	print(len(onehot), "values in onehot vector")
-	onehot=np.asarray(onehot)
-	print(type(onehot))
-	onehot.tofile("data")
-
-#creating training data (each sentence is a matrix of onehot vectors) siwe of each sentence is number_of_words*vocabulary_size. Total is number_of_words*vocabulary*qty_verse
-#total size is : 29989*6521=195 558 269 values. It seems to be too big for the neural network. Is it a good idea to reduce to alphabet 29989*25=749 725 values. Seems more reasonable
-alphabet='abcdefghijklmnopqrstuvwxyz'
-X=1
-Yreal=1
