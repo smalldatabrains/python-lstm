@@ -16,7 +16,7 @@ print("Connected to tweeter")
 msg_limit=100000
 language="fr"
 party=["politique","insoumis","front de gauche","rassemblement national","front national","fn","en marche","gouvernement","gauche","droite","ps","parti socialiste","les républicains","eelv"]
-politics=["mélenchon","jean-marie lepen","marine le pen","marine","macron","poutoux","sarkozy","le pen","hidalgo","hamon","vals"]
+politics=["mélenchon","le pen","macron","poutoux","sarkozy","hidalgo","hamon","vals"]
 hashtag=party+politics
 
 print("Stream started")
