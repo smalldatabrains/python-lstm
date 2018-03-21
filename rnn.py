@@ -68,7 +68,7 @@ class RNN:
 		GJV=np.zeros(self.V.shape)
 		GJW=np.zeros(self.W.shape)
 		for t in reversed(np.arrange(time_steps)):#we start we the last time_step
-			#calcul of 
+			#calcul of partiel derivative regarding U,V and W
 
 			pass
 
